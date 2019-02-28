@@ -140,7 +140,7 @@ def execute():
 	if settings.flip_y:
 		pixely = img_length;
 		img_stepy *= -1
-		
+	pixely= 0
 	while tiley < endy:
 		tilex = settings.offset[0] 
 		pixelx = 0;		
