@@ -1,34 +1,23 @@
 #/usr/env python
 # Python3
 '''
-utiler
+utiler:
 	Tile Generator Utility
-	Useful for importing heightmaps/textures for the UE4 Tile Landscape Importer
-
-See help 
+See help: 
 	utiler.py -h 
 
-Note:
-	Default Tile Coordinates has Top-Left as origin 
-	     +x
-	 .----->
-	+|
-	y|
-	 V
-	For  all generated tiles Tiles{x}_{y}
+
+Useful for importing heightmaps/textures for the UE4 Tile Landscape Importer
+Suggested landscape tile texture sizes for UE4 [8129, 4033, 2017 ... ]
+
 
 github.com/138paulmiller
-
 
 '''
 
 import sys,math
 from PIL import Image
 
-# unreal suggeted landscape tile texture sizes
-#	"big": [8129, 8129 ],	
-#	"med": [4033, 4033 ],	
-#	"small": [2017, 2017 ]
 
 
 # use Object.__dict__ to dynamically set vals
@@ -84,9 +73,9 @@ def show_usage(args):
 options = {
 	'-d' : (set_dimen  , "-d int\n\tSet dimension of output Tile [d, d] }" ), 
 	'-f' : (set_format , "-s string \n\tformatted input string. Substututes {x} and {y}. Example Tile_{x}_{y}.png" ), 
-	'-x' : (set_offset , "-x int\n\tOsset for {x} argument passed into format" ), 
+	'-x' : (set_offset , "-x int\n\tOffset for {x} argument passed into format" ), 
 	'-y' : (set_offset , "-y int\n\tSame as -x, except offsets {y} " ), 
-	'-s' : (set_subdiv , "-s int\n\tHow much levels of subdivision " ), 
+	'-s' : (set_subdiv , "-s int\n\tNumber of subdivisions " ), 
 	'-v' : (set_flip 	,"-v\n\tFlips coordinates such that output tile coordinate system Bottom-Left is origin  " ), 
 	'-h' : (show_usage 	,"-h\n\hPrint this menu " ), 
 
